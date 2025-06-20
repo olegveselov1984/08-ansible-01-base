@@ -6,7 +6,7 @@
 2. Создайте свой публичный репозиторий на GitHub с произвольным именем.
 3. Скачайте [Playbook](./playbook/) из репозитория с домашним заданием и перенесите его в свой репозиторий.
 
-https://raw.githubusercontent.com/olegveselov1984/08-ansible-01-base/refs/heads/HW01/playbook/images/1.bmp
+https://github.com/olegveselov1984/08-ansible-01-base/blob/3c63fe463976e925ff5c86594d42e999ac99fee3/playbook/images/2.jpg
 
 
 
