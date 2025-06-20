@@ -6,23 +6,63 @@
 2. Создайте свой публичный репозиторий на GitHub с произвольным именем.
 3. Скачайте [Playbook](./playbook/) из репозитория с домашним заданием и перенесите его в свой репозиторий.
 
-https://raw.githubusercontent.com/olegveselov1984/08-ansible-01-base/refs/heads/HW01/playbook/images/1.bmp
+![image](https://github.com/user-attachments/assets/06bc782d-cacf-4e3d-bf5b-49fefebee820)
+
 
 
 
 ## Основная часть
 
 1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
+
+![image](https://github.com/user-attachments/assets/f2bfcb24-499f-46b0-8694-71edda55a5cd)
+
+
 2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
+
+![image](https://github.com/user-attachments/assets/13be1e71-f808-4ee9-8c63-bcf19dc5cdac)
+
+
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
+
+docker run -it -d -v $(pwd):/data --name ubuntu  pycontribs/ubuntu         (docker run -d -v $(pwd):/data --name ubuntu  haproxytech/haproxy-ubuntu   с данной строкой не работает)
+docker run -it -d -v $(pwd):/data --name centos7  centos:7   
+
+
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
+
+![image](https://github.com/user-attachments/assets/6fd80fe9-28b8-4fb2-9a04-a9648671b9de)
+
+
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
+
+![image](https://github.com/user-attachments/assets/ddb0a179-f11e-4827-93b2-89b0b177365c)
+
+
 6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
+
+![image](https://github.com/user-attachments/assets/03e54722-67e8-40f1-b9c5-0d7d5a6cfc13)
+
+
 7. При помощи `ansible-vault` зашифруйте факты в `group_vars/deb` и `group_vars/el` с паролем `netology`.
+
+
 8. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
+
+![image](https://github.com/user-attachments/assets/645bf199-5321-4a09-89e2-e8f14f4f38ae)
+
+
 9. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.
 10. В `prod.yml` добавьте новую группу хостов с именем  `local`, в ней разместите localhost с необходимым типом подключения.
+
+![image](https://github.com/user-attachments/assets/37a1441d-55c5-4eb2-bca4-84724cb1ce8a)
+
+
 11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
+
+![image](https://github.com/user-attachments/assets/6a585391-9c11-4de4-9c91-cb6cb6f1672e)
+
+
 12. Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 13. Предоставьте скриншоты результатов запуска команд.
 
